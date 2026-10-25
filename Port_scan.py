@@ -112,7 +112,6 @@ class PortScanner:
         return sorted(self.open_ports)
     
     def _worker(self):
-        # CORRIGIDO: Removido os parênteses de self.stop_event e corrigido self.port_quere para self.port_queue
         while not self.stop_event.is_set():
             try:
                 port = self.port_queue.get_nowait()
